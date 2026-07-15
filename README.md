@@ -476,21 +476,6 @@ Text2SQL-AI/
 └── README.md
 ```
 
----
-
-## Valor para el portafolio
-
-Este proyecto complementa a NetOps AI desde el ángulo de **Data Analyst /
-BI Developer / Data Engineer Junior**, con una progresión clara hacia **AI
-Engineer**: modelado relacional con claves compuestas reales, ETL
-validado, una API con integración de LLM, una capa de seguridad diseñada
-en capas independientes y puesta a prueba con bypasses reales (no solo
-declarada), y un dashboard de BI con DAX no trivial.
-
-Los tres retos documentados arriba son, a propósito, la parte más
-importante de este README: muestran un proceso real de encontrar un
-problema, reproducirlo con un caso concreto, corregirlo, y verificar que
-la corrección no reabre nada de lo que ya estaba resuelto.
 
 ---
 
