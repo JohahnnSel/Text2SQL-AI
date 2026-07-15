@@ -1,0 +1,27 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Virtual environments
+.venv/
+venv/
+code/.venv/
+
+# Environment variables
+.env
+code/.env
+
+# IDE
+.vscode/
+.idea/
+
+# Cache
+.pytest_cache/
+
+# Windows
+Thumbs.db
+Desktop.ini
+
+# Power BI
+*.pbix.autosave*.pbix

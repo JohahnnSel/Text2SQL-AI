@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Libro de Gastos — Asistente de consultas</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,500;8..60,600;8..60,700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<div class="page">
+
+  <header class="masthead">
+    <div class="masthead-title">
+      <span class="masthead-mark">§</span>
+      <div>
+        <h1>Libro de Gastos</h1>
+        <p class="masthead-sub">Asistente de consultas sobre RRHH y gastos — Gemini + SQL Server</p>
+      </div>
+    </div>
+    <div class="masthead-status">
+      <span class="status-dot" id="statusDot"></span>
+      <span id="statusLabel">verificando conexión…</span>
+    </div>
+  </header>
+
+  <section class="query-bar">
+    <form id="queryForm" autocomplete="off">
+      <textarea
+        id="pregunta"
+        placeholder="Preguntá algo sobre los gastos, por ejemplo: ¿cuánto gastó cada departamento este año?"
+        rows="1"
+        maxlength="500"
+      ></textarea>
+      <button type="submit" id="submitBtn" aria-label="Consultar">
+        <span class="btn-label">Consultar</span>
+        <span class="btn-arrow" aria-hidden="true">→</span>
+      </button>
+    </form>
+    <div class="suggestions" id="suggestions">
+      <button type="button" class="chip" data-q="¿Cuánto gastó cada departamento en total?">gasto por departamento</button>
+      <button type="button" class="chip" data-q="¿Qué gastos están pendientes de pago?">gastos pendientes</button>
+      <button type="button" class="chip" data-q="¿Cuál es el gasto promedio por empleado en Comercial?">promedio por empleado</button>
+      <button type="button" class="chip" data-q="¿Cuáles fueron los 5 gastos más grandes del último mes?">top 5 del mes</button>
+    </div>
+  </section>
+
+  <main class="ledger" id="ledger">
+    <div class="ledger-empty" id="ledgerEmpty">
+      <p>Todavía no hay asientos en el libro.</p>
+      <p class="dim">Escribí una pregunta arriba para generar el primero.</p>
+    </div>
+  </main>
+
+</div>
+
+<template id="entryTemplate">
+  <article class="entry">
+    <div class="entry-head">
+      <span class="entry-number"></span>
+      <span class="entry-time"></span>
+    </div>
+    <p class="entry-question"></p>
+
+    <div class="entry-body">
+      <div class="loading-state">
+        <span class="loading-dot"></span>
+        <span class="loading-label">Consultando el libro de gastos…</span>
+      </div>
+    </div>
+  </article>
+</template>
+
+<script src="/static/app.js"></script>
+</body>
+</html>
